@@ -102,7 +102,7 @@ func (s *Server) getVerifyFormValues(r *http.Request, formKey []string, retext s
 	for _, key := range formKey {
 		valueArr, ok := r.Form[key]
 		if !ok {
-			return nil, errors.New("Missing required parameter")
+			return nil, fmt.Errorf("Missing required parameter %s", key)
 		}
 		for _, value := range valueArr {
 

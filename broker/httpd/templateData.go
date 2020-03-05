@@ -18,7 +18,7 @@ type consolePageTemplateData struct {
 const consoleAccessTemplateText = `
 {{define "consoleAccessPage"}}
 <!DOCTYPE html>
-<html style="height:100%; padding:0;border:0;margin:0">
+<html lang="en" style="height:100%; padding:0;border:0;margin:0">
     <head>
         <meta charset="UTF-8">
         <title>{{.Title}}</title>
@@ -92,7 +92,7 @@ type generateTokenPageTemplateData struct {
 const generateTokaneTemplateText = `
 {{define "generateTokenPagePage"}}
 <!DOCTYPE html>
-<html style="height:100%; padding:0;border:0;margin:0">
+<html lang="en" style="height:100%; padding:0;border:0;margin:0">
     <head>
         <meta charset="UTF-8">
         <title>{{.Title}}</title>
