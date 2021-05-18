@@ -6,7 +6,7 @@ GIT_COMMIT ?= $(shell git log -1 --pretty=format:"%H")
 
 
 default:
-	go build -ldflags "-X main.Version=git:${GIT_COMMIT}"
+	go build -ldflags "-X main.Version=git:${GIT_COMMIT} -X main.DefaultBaseURL=${DEFAULT_BASE_URL}"
 
 clean:
 	rm -f cg-systray-client
@@ -19,7 +19,7 @@ all: darwin
 darwin:
 	env GOOS=darwin GOARCH=amd64 go build -ldflags "-X main.Version=git:${GIT_COMMIT}  -X main.DefaultBaseURL=${DEFAULT_BASE_URL}"  -o cg-systray-client.Darwin
 
-signdarwin: cg-systray-client.Darwin
+signdarwin: darwin
 	codesign -s 69MB9635QH cg-systray-client.Darwin
 
 windows: 
